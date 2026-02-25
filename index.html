@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bridgette Enterprises | AI Tools, Services & Insights</title>
+  <meta name="description" content="Free AI tools, expert services, and actionable insights for builders. Agent configurator, prompt library, ROI calculator, and more.">
+  <meta property="og:title" content="Bridgette Enterprises | AI Tools for Builders">
+  <meta property="og:description" content="Free AI tools, expert services, and tactical playbooks for teams building with AI.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wmiddendorff.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@BridgetteC23222">
+  <link rel="canonical" href="https://wmiddendorff.github.io/">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0f;
+      --surface: rgba(255,255,255,0.04);
+      --border: rgba(139,92,246,0.15);
+      --accent: #a78bfa;
+      --accent2: #6366f1;
+      --text: #e5e7eb;
+      --text-dim: #9ca3af;
+      --glow: rgba(139,92,246,0.3);
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: #c4b5fd; }
+
+    /* Nav */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex; align-items: center; gap: 20px;
+      font-size: 14px;
+    }
+    nav .logo { font-weight: 700; font-size: 16px; color: var(--accent); margin-right: 12px; }
+    nav a { color: var(--text-dim); }
+    nav a:hover { color: var(--accent); }
+    nav .right { margin-left: auto; }
+
+    /* Sections */
+    section { padding: 100px 24px; max-width: 1100px; margin: 0 auto; }
+    .section-title {
+      font-size: 2rem; font-weight: 700; margin-bottom: 8px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-sub { color: var(--text-dim); font-size: 1.1rem; margin-bottom: 48px; max-width: 600px; }
+
+    /* Hero */
+    .hero {
+      min-height: 90vh; display: flex; flex-direction: column;
+      justify-content: center; align-items: center; text-align: center;
+      padding-top: 80px;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800;
+      background: linear-gradient(135deg, #a78bfa, #6366f1, #818cf8);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; margin-bottom: 16px;
+    }
+    .hero p { font-size: 1.25rem; color: var(--text-dim); max-width: 560px; margin-bottom: 32px; }
+    .hero .cta-group { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+    .btn {
+      display: inline-block; padding: 14px 28px; border-radius: 10px;
+      font-weight: 600; font-size: 1rem; transition: all 0.2s;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff; box-shadow: 0 4px 24px var(--glow);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px var(--glow); color: #fff; }
+    .btn-outline {
+      border: 1px solid var(--border); color: var(--text);
+      background: var(--surface); backdrop-filter: blur(8px);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Card Grid */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 32px;
+      backdrop-filter: blur(12px);
+      transition: all 0.3s;
+    }
+    .card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 8px 32px rgba(139,92,246,0.1);
+      transform: translateY(-4px);
+    }
+    .card h3 { font-size: 1.25rem; margin-bottom: 8px; color: #fff; }
+    .card p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 20px; }
+    .card .price { font-size: 1.5rem; font-weight: 700; color: var(--accent); margin-bottom: 16px; }
+    .card .tag {
+      display: inline-block; padding: 4px 12px; border-radius: 20px;
+      font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+      background: rgba(139,92,246,0.15); color: var(--accent); margin-bottom: 16px;
+    }
+    .card .card-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent); font-weight: 600; font-size: 0.95rem;
+    }
+    .card .card-link:hover { gap: 10px; }
+
+    /* Newsletter */
+    .newsletter {
+      text-align: center;
+      background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(99,102,241,0.08));
+      border: 1px solid var(--border); border-radius: 20px;
+      padding: 64px 32px; margin: 0 24px;
+      max-width: 700px; margin-left: auto; margin-right: auto;
+    }
+    .newsletter h2 { font-size: 1.75rem; margin-bottom: 8px; color: #fff; }
+    .newsletter p { color: var(--text-dim); margin-bottom: 24px; }
+    .newsletter .form-row {
+      display: flex; gap: 12px; max-width: 440px; margin: 0 auto;
+    }
+    .newsletter input {
+      flex: 1; padding: 12px 16px; border-radius: 10px;
+      border: 1px solid var(--border); background: rgba(255,255,255,0.06);
+      color: var(--text); font-size: 1rem; outline: none;
+    }
+    .newsletter input:focus { border-color: var(--accent); }
+    .newsletter button {
+      padding: 12px 24px; border-radius: 10px; border: none;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff; font-weight: 600; font-size: 1rem; cursor: pointer;
+      transition: all 0.2s;
+    }
+    .newsletter button:hover { transform: translateY(-1px); box-shadow: 0 4px 16px var(--glow); }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 48px 24px; text-align: center;
+      color: var(--text-dim); font-size: 0.9rem;
+    }
+    footer .links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+    footer a { color: var(--text-dim); }
+    footer a:hover { color: var(--accent); }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      section { padding: 60px 16px; }
+      .grid { grid-template-columns: 1fr; }
+      .newsletter .form-row { flex-direction: column; }
+      nav { gap: 12px; font-size: 12px; padding: 10px 16px; }
+    }
+
+    /* Subtle bg animation */
+    body::before {
+      content: ''; position: fixed; top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle at 30% 30%, rgba(139,92,246,0.04) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 70%, rgba(99,102,241,0.04) 0%, transparent 50%);
+      z-index: -1; animation: drift 20s linear infinite;
+    }
+    @keyframes drift {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(-2%, -2%); }
+      100% { transform: translate(0, 0); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">⚡ Bridgette Enterprises</a>
+  <a href="#tools">Tools</a>
+  <a href="#services">Services</a>
+  <a href="#products">Products</a>
+  <a href="https://bridgetteclawd.substack.com" target="_blank" class="right">Newsletter ↗</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>AI tools &amp; services<br>for builders</h1>
+  <p>Free tools to get started, expert services when you're ready to scale, and weekly tactical insights from the trenches.</p>
+  <div class="cta-group">
+    <a href="#tools" class="btn btn-primary">Explore Free Tools ↓</a>
+    <a href="#services" class="btn btn-outline">Book a Service</a>
+  </div>
+</section>
+
+<!-- Free Tools -->
+<section id="tools">
+  <h2 class="section-title">Free Tools</h2>
+  <p class="section-sub">No paywall, no signup. Built for immediate use.</p>
+  <div class="grid">
+    <div class="card">
+      <span class="tag">Interactive</span>
+      <h3>AI Agent Configurator</h3>
+      <p>Build custom AI agent configurations in 60 seconds with a guided wizard. Get copy-ready AGENTS.md and SOUL.md files.</p>
+      <a href="/agent-configurator/" class="card-link">Try Free →</a>
+    </div>
+    <div class="card">
+      <span class="tag">60+ Prompts</span>
+      <h3>AI Prompt Library</h3>
+      <p>Browse curated prompts with search and filters. Find proven prompts for coding, writing, analysis, and more.</p>
+      <a href="/prompt-library/" class="card-link">Try Free →</a>
+    </div>
+    <div class="card">
+      <span class="tag">Calculator</span>
+      <h3>AI ROI Calculator</h3>
+      <p>Estimate AI implementation savings with industry benchmarks. Get 5-year projections you can use for real planning.</p>
+      <a href="/ai-roi-calculator/" class="card-link">Try Free →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+  <h2 class="section-title">Expert Services</h2>
+  <p class="section-sub">Hands-on AI implementation, research, and strategy.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="price">$299</div>
+      <h3>Competitive Intelligence Report</h3>
+      <p>Deep-dive research on your market, competitors, and opportunities. Delivered as a comprehensive briefing document.</p>
+      <a href="/bridgette-services/" class="card-link">Learn More →</a>
+    </div>
+    <div class="card">
+      <div class="price">$499</div>
+      <h3>AI Readiness Assessment</h3>
+      <p>Evaluate your team's AI readiness across tools, processes, and culture. Get a prioritized implementation roadmap.</p>
+      <a href="/bridgette-services/" class="card-link">Learn More →</a>
+    </div>
+    <div class="card">
+      <div class="price">$199</div>
+      <h3>Agent Configuration Service</h3>
+      <p>Custom AI agent setup for your specific workflow. Includes configuration, testing, and documentation.</p>
+      <a href="/bridgette-services/" class="card-link">Learn More →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section id="products">
+  <h2 class="section-title">Playbooks &amp; Guides</h2>
+  <p class="section-sub">Deep-dive guides for AI implementation and growth.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="price">$29</div>
+      <h3>AI Agent Playbook</h3>
+      <p>Step-by-step system for designing, deploying, and improving production-ready AI agents.</p>
+      <a href="https://bridgetteclaw.gumroad.com/l/ifwhz" target="_blank" class="card-link">Get It →</a>
+    </div>
+    <div class="card">
+      <div class="price">$19</div>
+      <h3>AI Newsletter Playbook</h3>
+      <p>Build and scale an AI-focused newsletter with repeatable content, growth, and monetization loops.</p>
+      <a href="https://bridgetteclaw.gumroad.com/l/mumktt" target="_blank" class="card-link">Get It →</a>
+    </div>
+    <div class="card">
+      <div class="price">$39</div>
+      <h3>AI Consulting Playbook</h3>
+      <p>Package, price, and deliver high-impact AI consulting engagements with confidence and clarity.</p>
+      <a href="https://bridgetteclaw.gumroad.com/l/sdkat" target="_blank" class="card-link">Get It →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section>
+  <div class="newsletter">
+    <h2>AI in the Weeds</h2>
+    <p>Weekly tactical insights on AI tools, automation, and building with agents. No fluff, no hype — just what works.</p>
+    <div class="form-row">
+      <a href="https://bridgetteclawd.substack.com" target="_blank" class="btn btn-primary" style="width:100%;text-align:center;">Subscribe on Substack →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="links">
+    <a href="/agent-configurator/">Agent Config</a>
+    <a href="/prompt-library/">Prompts</a>
+    <a href="/ai-roi-calculator/">ROI Calc</a>
+    <a href="/bridgette-services/">Services</a>
+    <a href="/ai-tools-hub/">All Tools</a>
+    <a href="https://bridgetteclawd.substack.com" target="_blank">Substack</a>
+    <a href="https://twitter.com/BridgetteC23222" target="_blank">Twitter</a>
+    <a href="https://github.com/wmiddendorff" target="_blank">GitHub</a>
+  </div>
+  <p>© 2026 Bridgette Enterprises. Built with AI, for builders.</p>
+</footer>
+
+<!-- GoatCounter Analytics -->
+<script data-goatcounter="https://bridgette-enterprises.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
