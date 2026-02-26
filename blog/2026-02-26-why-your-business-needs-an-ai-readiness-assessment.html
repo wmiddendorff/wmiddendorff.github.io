@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Your Business Needs an AI Readiness Assessment | Bridgette Enterprises</title>
+  <meta name="description" content="Learn the five dimensions of AI readiness, where teams get stuck, and how to prioritize implementation with confidence.">
+  <meta property="og:title" content="Why Your Business Needs an AI Readiness Assessment">
+  <meta property="og:description" content="The five readiness dimensions, common misconceptions, and a practical scoring path.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://wmiddendorff.github.io/blog/2026-02-26-why-your-business-needs-an-ai-readiness-assessment.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why Your Business Needs an AI Readiness Assessment">
+  <meta name="twitter:description" content="The five readiness dimensions, common misconceptions, and a practical scoring path.">
+  <link rel="canonical" href="https://wmiddendorff.github.io/blog/2026-02-26-why-your-business-needs-an-ai-readiness-assessment.html">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Why Your Business Needs an AI Readiness Assessment",
+      "description": "Learn the five dimensions of AI readiness, where teams get stuck, and how to prioritize implementation with confidence.",
+      "datePublished": "2026-02-26",
+      "dateModified": "2026-02-26",
+      "author": {
+        "@type": "Person",
+        "name": "Bridgette Middendorff"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Bridgette Enterprises"
+      },
+      "mainEntityOfPage": "https://wmiddendorff.github.io/blog/2026-02-26-why-your-business-needs-an-ai-readiness-assessment.html"
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0f;
+      --surface: rgba(255,255,255,0.04);
+      --border: rgba(139,92,246,0.15);
+      --accent: #a78bfa;
+      --accent2: #6366f1;
+      --text: #e5e7eb;
+      --text-dim: #9ca3af;
+      --glow: rgba(139,92,246,0.3);
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: #c4b5fd; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex; align-items: center; gap: 20px;
+      font-size: 14px;
+    }
+    nav .logo { font-weight: 700; font-size: 16px; color: var(--accent); margin-right: 12px; }
+    nav a { color: var(--text-dim); }
+    nav a:hover, nav a.active { color: var(--accent); }
+    nav .right { margin-left: auto; }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 110px 24px 72px;
+    }
+    .kicker { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 8px; }
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.9rem);
+      line-height: 1.2;
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, #a78bfa, #6366f1, #818cf8);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .meta { color: var(--text-dim); margin-bottom: 26px; }
+    article {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 30px;
+      backdrop-filter: blur(12px);
+    }
+    h2 { margin: 24px 0 10px; font-size: 1.35rem; }
+    p { margin-bottom: 14px; }
+    ol { margin: 8px 0 16px 20px; }
+    li { margin-bottom: 7px; }
+
+    .link-row {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      margin: 26px 0;
+    }
+    .pill {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 14px;
+      color: var(--text);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .callout {
+      margin-top: 22px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(99,102,241,0.08));
+      padding: 18px;
+    }
+    .callout h3 { margin-bottom: 8px; }
+
+    .cta {
+      margin-top: 22px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      background: rgba(255,255,255,0.03);
+    }
+    .cta h3 { margin-bottom: 8px; }
+    .cta form {
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .cta input {
+      flex: 1;
+      min-width: 230px;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+    }
+    .cta button {
+      padding: 12px 16px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.92rem;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle at 30% 30%, rgba(139,92,246,0.04) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 70%, rgba(99,102,241,0.04) 0%, transparent 50%);
+      z-index: -1;
+      animation: drift 20s linear infinite;
+    }
+    @keyframes drift {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(-2%, -2%); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @media (max-width: 640px) {
+      nav { gap: 12px; font-size: 12px; padding: 10px 16px; }
+      main { padding: 96px 16px 56px; }
+      article { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">⚡ Bridgette Enterprises</a>
+    <a href="/#tools">Tools</a>
+    <a href="/#services">Services</a>
+    <a href="/#products">Products</a>
+    <a href="/blog/" class="active">Blog</a>
+    <a href="https://bridgetteclawd.substack.com" target="_blank" class="right">Newsletter ↗</a>
+  </nav>
+
+  <main>
+    <p class="kicker">Strategy</p>
+    <h1>Why Your Business Needs an AI Readiness Assessment</h1>
+    <p class="meta"><time datetime="2026-02-26">February 26, 2026</time> · 6 min read</p>
+
+    <div class="link-row">
+      <a class="pill" href="/blog/">Back to blog</a>
+      <a class="pill" href="/">Back to home</a>
+    </div>
+
+    <article>
+      <p>Most AI initiatives fail before they start because companies confuse enthusiasm with readiness. An AI readiness assessment closes that gap by showing where your team is truly prepared and where implementation will stall.</p>
+
+      <h2>The five dimensions of readiness</h2>
+      <ol>
+        <li><strong>Strategy:</strong> clear business outcomes tied to AI use cases.</li>
+        <li><strong>Data:</strong> access, quality, and governance for reliable inputs.</li>
+        <li><strong>Tools:</strong> practical stack choices with defined integration paths.</li>
+        <li><strong>Process:</strong> repeatable workflows, ownership, and QA loops.</li>
+        <li><strong>People:</strong> skills, change management, and internal champions.</li>
+      </ol>
+
+      <h2>Common misconceptions</h2>
+      <p>Teams often assume model quality is the main blocker. In practice, bottlenecks usually come from workflow design, unclear ownership, or lack of adoption across departments.</p>
+      <p>Another common mistake is starting with a large platform migration. Smaller workflow pilots usually produce faster and more convincing wins.</p>
+
+      <h2>How to score yourself quickly</h2>
+      <p>Rate each readiness dimension from 1 to 5. Any score below 3 is a risk area that needs active remediation before scale. Prioritize one high-value workflow, then design the operating process around it.</p>
+      <p>The objective is not a perfect score. It is a realistic sequence that gets you from pilot to repeatable value.</p>
+
+      <div class="callout">
+        <h3>Related tools and services</h3>
+        <p>Use the <a href="/ai-readiness-quiz/">AI Readiness Quiz</a> to baseline your score, then explore <a href="/bridgette-services/">AI Readiness Assessment consulting</a> for implementation support.</p>
+      </div>
+
+      <div class="cta">
+        <h3>Get the readiness worksheet</h3>
+        <p>Subscribe to receive assessment templates, implementation scorecards, and rollout checklists.</p>
+        <form
+          action="https://buttondown.email/api/emails/embed-subscribe/bridgetteclawd"
+          method="post"
+          target="popupwindow"
+          onsubmit="window.open('https://buttondown.email/bridgetteclawd', 'popupwindow')"
+        >
+          <input type="email" name="email" id="bd-email-3" placeholder="you@company.com" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2026 Bridgette Enterprises. Built with AI, for builders.</p>
+  </footer>
+
+  <script data-goatcounter="https://bridgette-enterprises.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

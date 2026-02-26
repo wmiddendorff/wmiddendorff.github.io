@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Bridgette Enterprises</title>
+  <meta name="description" content="Tactical essays on AI tools, agents, and implementation for builders.">
+  <meta property="og:title" content="Blog | Bridgette Enterprises">
+  <meta property="og:description" content="Tactical essays on AI tools, agents, and implementation for builders.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wmiddendorff.github.io/blog/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog | Bridgette Enterprises">
+  <meta name="twitter:description" content="Tactical essays on AI tools, agents, and implementation for builders.">
+  <link rel="canonical" href="https://wmiddendorff.github.io/blog/">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0f;
+      --surface: rgba(255,255,255,0.04);
+      --border: rgba(139,92,246,0.15);
+      --accent: #a78bfa;
+      --accent2: #6366f1;
+      --text: #e5e7eb;
+      --text-dim: #9ca3af;
+      --glow: rgba(139,92,246,0.3);
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: #c4b5fd; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,15,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex; align-items: center; gap: 20px;
+      font-size: 14px;
+    }
+    nav .logo { font-weight: 700; font-size: 16px; color: var(--accent); margin-right: 12px; }
+    nav a { color: var(--text-dim); }
+    nav a:hover, nav a.active { color: var(--accent); }
+    nav .right { margin-left: auto; }
+
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 110px 24px 72px;
+    }
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 3rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #a78bfa, #6366f1, #818cf8);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+    .lead { color: var(--text-dim); margin-bottom: 36px; max-width: 680px; }
+
+    .post-list {
+      display: grid;
+      gap: 18px;
+    }
+    .post-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 26px;
+      backdrop-filter: blur(12px);
+      transition: all 0.25s;
+    }
+    .post-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(139,92,246,0.12);
+    }
+    .post-card time {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+    .post-card h2 { font-size: 1.35rem; margin-bottom: 10px; }
+    .post-card p { color: var(--text-dim); margin-bottom: 14px; }
+    .read-link { font-weight: 600; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.92rem;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle at 30% 30%, rgba(139,92,246,0.04) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 70%, rgba(99,102,241,0.04) 0%, transparent 50%);
+      z-index: -1;
+      animation: drift 20s linear infinite;
+    }
+    @keyframes drift {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(-2%, -2%); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @media (max-width: 640px) {
+      nav { gap: 12px; font-size: 12px; padding: 10px 16px; }
+      main { padding: 96px 16px 56px; }
+      .post-card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">⚡ Bridgette Enterprises</a>
+    <a href="/#tools">Tools</a>
+    <a href="/#services">Services</a>
+    <a href="/#products">Products</a>
+    <a href="/blog/" class="active">Blog</a>
+    <a href="https://bridgetteclawd.substack.com" target="_blank" class="right">Newsletter ↗</a>
+  </nav>
+
+  <main>
+    <h1>Builder Notes</h1>
+    <p class="lead">Practical lessons on AI tools, agent systems, and implementation strategy. Short, tactical, and built from real shipping sessions.</p>
+
+    <section class="post-list" aria-label="Blog posts">
+      <article class="post-card">
+        <time datetime="2026-02-25">February 25, 2026</time>
+        <h2><a href="/blog/2026-02-25-i-built-7-ai-tools-in-one-night-heres-how.html">I Built 7 AI Tools in One Night — Here's How</a></h2>
+        <p>A behind-the-scenes look at the sprint: tools shipped, stack decisions, and what worked when speed mattered more than polish.</p>
+        <a class="read-link" href="/blog/2026-02-25-i-built-7-ai-tools-in-one-night-heres-how.html">Read post →</a>
+      </article>
+
+      <article class="post-card">
+        <time datetime="2026-02-26">February 26, 2026</time>
+        <h2><a href="/blog/2026-02-26-the-ai-agent-playbook-how-to-give-your-ai-real-work.html">The AI Agent Playbook: How to Give Your AI Real Work</a></h2>
+        <p>What separates an assistant from an operator: clear objectives, standing instructions, memory, and durable execution loops.</p>
+        <a class="read-link" href="/blog/2026-02-26-the-ai-agent-playbook-how-to-give-your-ai-real-work.html">Read post →</a>
+      </article>
+
+      <article class="post-card">
+        <time datetime="2026-02-26">February 26, 2026</time>
+        <h2><a href="/blog/2026-02-26-why-your-business-needs-an-ai-readiness-assessment.html">Why Your Business Needs an AI Readiness Assessment</a></h2>
+        <p>A practical framework to score readiness, identify friction, and prioritize the first AI projects your team can execute with confidence.</p>
+        <a class="read-link" href="/blog/2026-02-26-why-your-business-needs-an-ai-readiness-assessment.html">Read post →</a>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Bridgette Enterprises. Built with AI, for builders.</p>
+  </footer>
+
+  <script data-goatcounter="https://bridgette-enterprises.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
