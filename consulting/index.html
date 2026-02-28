@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Strategy Session Intake | Wesley Middendorff</title>
+  <meta name="description" content="Book a free 30-minute AI strategy session with Wesley Middendorff. Share your goals, current tools, and business context so we can make the call actionable.">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="buttondown-token" content="">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap");
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #121219;
+      --panel: #16162a;
+      --field: #1a1a2e;
+      --text: #f5f5f6;
+      --muted: #b2b2c3;
+      --border: #2f304d;
+      --accent: #4f46e5;
+      --accent-2: #7c3aed;
+      --accent-soft: rgba(79, 70, 229, 0.2);
+      --ok: #1ec28b;
+      --error: #ff7676;
+      --maxw: 980px;
+      --radius: 14px;
+      --shadow: 0 12px 36px rgba(0, 0, 0, 0.34);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "IBM Plex Sans", "Segoe UI", Tahoma, sans-serif;
+      background:
+        radial-gradient(1400px 560px at 80% -5%, rgba(124, 58, 237, 0.2), transparent 60%),
+        radial-gradient(1000px 460px at 5% 4%, rgba(79, 70, 229, 0.22), transparent 50%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: #c6c2ff;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .wrap {
+      width: min(100% - 2rem, var(--maxw));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 2.75rem 0;
+    }
+
+    .hero {
+      padding-top: 4.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: #cbc9f9;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Sora", "Avenir Next", sans-serif;
+      letter-spacing: -0.03em;
+      line-height: 1.18;
+      margin: 0 0 0.85rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.55rem);
+      max-width: 18ch;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+    }
+
+    .hero-sub {
+      max-width: 60ch;
+      font-size: 1.08rem;
+      color: #ddd9ff;
+    }
+
+    .trust {
+      margin-top: 1.2rem;
+      max-width: 62ch;
+      border: 1px solid rgba(79, 70, 229, 0.45);
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.16), rgba(124, 58, 237, 0.08));
+      color: #f8f7ff;
+      border-radius: var(--radius);
+      padding: 0.95rem 1rem;
+      box-shadow: var(--shadow);
+    }
+
+    .score-note {
+      margin-top: 1.2rem;
+      border-left: 3px solid var(--accent);
+      padding: 0.8rem 0.95rem;
+      background: rgba(79, 70, 229, 0.12);
+      color: #ecebff;
+      border-radius: 0 10px 10px 0;
+      display: none;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .cards {
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent), var(--surface);
+      border-radius: var(--radius);
+      padding: 1.1rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin-bottom: 0.55rem;
+      font-size: 1.12rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .form-shell {
+      border: 1px solid var(--border);
+      background: linear-gradient(170deg, rgba(124, 58, 237, 0.06), rgba(79, 70, 229, 0.08) 45%, rgba(255, 255, 255, 0.01)), var(--surface);
+      border-radius: 18px;
+      padding: 1.1rem;
+      box-shadow: var(--shadow);
+    }
+
+    .field {
+      margin-bottom: 1rem;
+    }
+
+    label,
+    legend {
+      display: block;
+      font-size: 0.92rem;
+      color: #ecebff;
+      font-weight: 600;
+      margin-bottom: 0.38rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #3b3c59;
+      border-radius: 12px;
+      background: var(--field);
+      color: #fbfaff;
+      font: inherit;
+      padding: 0.75rem 0.8rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    textarea {
+      min-height: 116px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-soft);
+    }
+
+    .help {
+      margin: 0.4rem 0 0;
+      font-size: 0.85rem;
+      color: #b6b4df;
+    }
+
+    fieldset {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin: 0 0 1rem;
+      padding: 0.75rem 0.7rem;
+      min-width: 0;
+    }
+
+    .checks {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.5rem;
+    }
+
+    .check {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.02);
+      padding: 0.52rem 0.58rem;
+      color: #f2f1ff;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .check input {
+      width: 1rem;
+      height: 1rem;
+      margin: 0;
+      accent-color: var(--accent);
+    }
+
+    .error {
+      margin: 0.35rem 0 0;
+      color: var(--error);
+      min-height: 1.05em;
+      font-size: 0.84rem;
+    }
+
+    .status {
+      margin-top: 0.8rem;
+      border-radius: 10px;
+      padding: 0.7rem 0.8rem;
+      border: 1px solid transparent;
+      font-size: 0.95rem;
+      display: none;
+    }
+
+    .status.ok {
+      display: block;
+      border-color: rgba(30, 194, 139, 0.45);
+      background: rgba(30, 194, 139, 0.14);
+      color: #dffff4;
+    }
+
+    .status.info {
+      display: block;
+      border-color: var(--border);
+      background: rgba(255, 255, 255, 0.04);
+      color: #ecebff;
+    }
+
+    .status.warn {
+      display: block;
+      border-color: rgba(255, 118, 118, 0.45);
+      background: rgba(255, 118, 118, 0.14);
+      color: #ffecec;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 12px;
+      padding: 0.84rem 1.1rem;
+      width: 100%;
+      background: linear-gradient(120deg, var(--accent), var(--accent-2));
+      color: #fff;
+      font-weight: 700;
+      font-family: "Sora", sans-serif;
+      font-size: 0.98rem;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-1px);
+      filter: brightness(1.08);
+    }
+
+    .btn[disabled] {
+      opacity: 0.7;
+      cursor: wait;
+      transform: none;
+    }
+
+    .social {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(79, 70, 229, 0.08), rgba(124, 58, 237, 0.04)), var(--surface);
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.42rem;
+      margin-top: 0.3rem;
+    }
+
+    .chip {
+      border: 1px solid #414266;
+      color: #e6e5ff;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      padding: 0.24rem 0.62rem;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    footer {
+      padding: 2.5rem 0 3rem;
+      border-top: 1px solid #20203d;
+      margin-top: 2.6rem;
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+    }
+
+    .newsletter {
+      display: grid;
+      gap: 0.65rem;
+      grid-template-columns: 1fr;
+      max-width: 470px;
+    }
+
+    .newsletter small {
+      color: #aaa7ce;
+    }
+
+    .newsletter-row {
+      display: flex;
+      gap: 0.6rem;
+      flex-direction: column;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 760px) {
+      .section {
+        padding: 3.3rem 0;
+      }
+
+      .cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .field-wide {
+        grid-column: 1 / -1;
+      }
+
+      .newsletter-row {
+        flex-direction: row;
+      }
+
+      .newsletter-row .btn {
+        width: auto;
+        white-space: nowrap;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal,
+      .reveal.in,
+      .btn,
+      input,
+      select,
+      textarea {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero section reveal">
+    <div class="wrap">
+      <p class="eyebrow">Free Strategy Session</p>
+      <h1>Let&rsquo;s Talk About Your AI Strategy</h1>
+      <p class="hero-sub">Free 30-minute session with Wesley Middendorff &mdash; 2+ years of hands-on AI implementation</p>
+      <p class="trust">No sales pitch. Just honest advice about where AI fits in your business.</p>
+      <p class="score-note" id="assessment-message" aria-live="polite"></p>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section reveal">
+      <div class="wrap">
+        <h2>What You&rsquo;ll Get</h2>
+        <div class="grid cards">
+          <article class="card">
+            <h3>Assessment Review</h3>
+            <p>We&rsquo;ll analyze your AI readiness results together and identify where fast progress is realistic.</p>
+          </article>
+          <article class="card">
+            <h3>Custom Roadmap</h3>
+            <p>Specific recommendations for your business, not generic advice you could get from a prompt.</p>
+          </article>
+          <article class="card">
+            <h3>Implementation Plan</h3>
+            <p>Clear next steps, timeline, and realistic budget assumptions for your current team size.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="intake">
+      <div class="wrap">
+        <h2>Book Your Session</h2>
+        <div class="form-shell">
+          <form id="intake-form" novalidate>
+            <input type="hidden" id="assessment-score" name="assessment_score">
+            <input type="hidden" id="assessment-level" name="assessment_level">
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="full-name">Full name *</label>
+                <input type="text" id="full-name" name="full_name" autocomplete="name" required>
+                <p class="error" id="error-full-name"></p>
+              </div>
+
+              <div class="field">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+                <p class="error" id="error-email"></p>
+              </div>
+
+              <div class="field">
+                <label for="company-name">Company name *</label>
+                <input type="text" id="company-name" name="company_name" autocomplete="organization" required>
+                <p class="error" id="error-company-name"></p>
+              </div>
+
+              <div class="field">
+                <label for="company-size">Company size</label>
+                <select id="company-size" name="company_size">
+                  <option value="">Select size</option>
+                  <option value="Solo">Solo</option>
+                  <option value="1-10">1-10</option>
+                  <option value="11-50">11-50</option>
+                  <option value="51-200">51-200</option>
+                  <option value="200+">200+</option>
+                </select>
+                <p class="error" id="error-company-size"></p>
+              </div>
+
+              <div class="field field-wide">
+                <label for="industry">Industry</label>
+                <input type="text" id="industry" name="industry" autocomplete="organization-title" placeholder="e.g., Logistics, Healthcare, SaaS">
+                <p class="error" id="error-industry"></p>
+              </div>
+
+              <div class="field field-wide">
+                <label for="biggest-challenge">What&rsquo;s your biggest challenge with AI right now? *</label>
+                <textarea id="biggest-challenge" name="biggest_challenge" required></textarea>
+                <p class="error" id="error-biggest-challenge"></p>
+              </div>
+
+              <div class="field field-wide">
+                <label for="current-tools">What AI tools are you currently using, if any?</label>
+                <textarea id="current-tools" name="current_tools"></textarea>
+                <p class="error" id="error-current-tools"></p>
+              </div>
+
+              <div class="field field-wide">
+                <fieldset>
+                  <legend>Preferred meeting time *</legend>
+                  <p class="help">Available slots are listed here for preference only. Wes will confirm your final time personally.</p>
+                  <div class="checks">
+                    <label class="check"><input type="checkbox" name="preferred_time" value="Morning (9-12)">Morning (9-12)</label>
+                    <label class="check"><input type="checkbox" name="preferred_time" value="Afternoon (12-5)">Afternoon (12-5)</label>
+                    <label class="check"><input type="checkbox" name="preferred_time" value="Evening (5-8)">Evening (5-8)</label>
+                    <label class="check"><input type="checkbox" name="preferred_time" value="Flexible">Flexible</label>
+                  </div>
+                </fieldset>
+                <p class="error" id="error-preferred-time"></p>
+              </div>
+
+              <div class="field field-wide">
+                <label for="how-found">How did you find us?</label>
+                <select id="how-found" name="how_found">
+                  <option value="AI Assessment Tool">AI Assessment Tool</option>
+                  <option value="Blog">Blog</option>
+                  <option value="Twitter">Twitter</option>
+                  <option value="Reddit">Reddit</option>
+                  <option value="Referral">Referral</option>
+                  <option value="Other">Other</option>
+                </select>
+                <p class="error" id="error-how-found"></p>
+              </div>
+            </div>
+
+            <button class="btn" id="submit-btn" type="submit">Request Free Strategy Call</button>
+            <p class="status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="background">
+      <div class="wrap">
+        <div class="social">
+          <h2>Wesley&rsquo;s Background</h2>
+          <p>Wesley Middendorff is the EOS Integrator at Decypher and an AI implementation specialist. He has helped teams from 10 to 200+ employees adopt practical AI systems that improve execution, reporting, and decision speed.</p>
+          <p>Experience includes production rollouts of agent workflows, internal copilots, and data products that stay maintainable after launch.</p>
+          <div class="chips" aria-label="Experience areas">
+            <span class="chip">OpenAI</span>
+            <span class="chip">Anthropic</span>
+            <span class="chip">Custom Agents</span>
+            <span class="chip">Data Pipelines</span>
+            <span class="chip">BI Dashboards</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="reveal">
+    <div class="wrap">
+      <div class="footer-links">
+        <a href="https://wmiddendorff.github.io/" rel="noopener">Main site</a>
+        <a href="https://wmiddendorff.github.io/blog/" rel="noopener">Blog</a>
+        <a href="https://wmiddendorff.github.io/ai-assessment/" rel="noopener">AI Assessment</a>
+        <a href="https://wmiddendorff.github.io/ai-tools/" rel="noopener">AI Tools Hub</a>
+      </div>
+
+      <div class="newsletter">
+        <strong>Built by Bridgette Enterprises</strong>
+        <form action="https://buttondown.email/api/emails/embed-subscribe/wmiddendorff" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/wmiddendorff', 'popupwindow')">
+          <label for="newsletter-email">Buttondown newsletter signup</label>
+          <div class="newsletter-row">
+            <input id="newsletter-email" type="email" name="email" placeholder="you@company.com" required>
+            <button type="submit" class="btn">Subscribe</button>
+          </div>
+        </form>
+        <small>Practical notes on AI adoption, team workflows, and implementation tradeoffs.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById("intake-form");
+      var submitBtn = document.getElementById("submit-btn");
+      var statusEl = document.getElementById("form-status");
+      var scoreField = document.getElementById("assessment-score");
+      var levelField = document.getElementById("assessment-level");
+      var assessmentMessage = document.getElementById("assessment-message");
+
+      function q(id) {
+        return document.getElementById(id);
+      }
+
+      function setError(id, message) {
+        q(id).textContent = message || "";
+      }
+
+      function showStatus(kind, message) {
+        statusEl.className = "status " + kind;
+        statusEl.textContent = message;
+      }
+
+      function clearStatus() {
+        statusEl.className = "status";
+        statusEl.textContent = "";
+      }
+
+      function sanitizeScore(value) {
+        if (!value) return "";
+        var parsed = Number(value);
+        if (!Number.isFinite(parsed)) return "";
+        var bounded = Math.max(0, Math.min(100, Math.round(parsed)));
+        return String(bounded);
+      }
+
+      function readParams() {
+        var params = new URLSearchParams(window.location.search);
+        var score = sanitizeScore(params.get("score"));
+        var level = (params.get("level") || "").trim();
+
+        scoreField.value = score;
+        levelField.value = level;
+
+        if (score) {
+          var extra = level ? " and " + level + " readiness level" : "";
+          assessmentMessage.textContent = "Based on your assessment score of " + score + "/100" + extra + ", here are some areas we can focus on during your session.";
+          assessmentMessage.style.display = "block";
+        }
+      }
+
+      function collectChecked(name) {
+        var items = form.querySelectorAll('input[name="' + name + '"]:checked');
+        return Array.prototype.map.call(items, function (item) {
+          return item.value;
+        });
+      }
+
+      function validateForm() {
+        clearStatus();
+        setError("error-full-name", "");
+        setError("error-email", "");
+        setError("error-company-name", "");
+        setError("error-biggest-challenge", "");
+        setError("error-preferred-time", "");
+
+        var fullName = q("full-name").value.trim();
+        var email = q("email").value.trim();
+        var companyName = q("company-name").value.trim();
+        var companySize = q("company-size").value.trim();
+        var industry = q("industry").value.trim();
+        var biggestChallenge = q("biggest-challenge").value.trim();
+        var currentTools = q("current-tools").value.trim();
+        var preferredTime = collectChecked("preferred_time");
+        var howFound = q("how-found").value;
+        var hasError = false;
+
+        if (!fullName) {
+          setError("error-full-name", "Please enter your full name.");
+          hasError = true;
+        }
+
+        if (!email) {
+          setError("error-email", "Please enter an email address.");
+          hasError = true;
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          setError("error-email", "Please enter a valid email address.");
+          hasError = true;
+        }
+
+        if (!companyName) {
+          setError("error-company-name", "Please enter your company name.");
+          hasError = true;
+        }
+
+        if (!biggestChallenge) {
+          setError("error-biggest-challenge", "Please share your biggest AI challenge.");
+          hasError = true;
+        }
+
+        if (!preferredTime.length) {
+          setError("error-preferred-time", "Select at least one preferred meeting window.");
+          hasError = true;
+        }
+
+        if (hasError) return null;
+
+        return {
+          fullName: fullName,
+          email: email,
+          companyName: companyName,
+          companySize: companySize || "Not provided",
+          industry: industry || "Not provided",
+          biggestChallenge: biggestChallenge,
+          currentTools: currentTools || "Not provided",
+          preferredTime: preferredTime,
+          howFound: howFound,
+          assessmentScore: scoreField.value || "Not provided",
+          assessmentLevel: levelField.value || "Not provided"
+        };
+      }
+
+      function buildNotes(data) {
+        return [
+          "Strategy call request from consulting intake page",
+          "",
+          "Name: " + data.fullName,
+          "Email: " + data.email,
+          "Company: " + data.companyName,
+          "Company size: " + data.companySize,
+          "Industry: " + data.industry,
+          "Preferred meeting time: " + data.preferredTime.join(", "),
+          "How they found us: " + data.howFound,
+          "Assessment score: " + data.assessmentScore,
+          "Assessment level: " + data.assessmentLevel,
+          "",
+          "Biggest challenge:",
+          data.biggestChallenge,
+          "",
+          "Current AI tools:",
+          data.currentTools
+        ].join("\n");
+      }
+
+      function backupLocally(data) {
+        var payload = {
+          storedAt: new Date().toISOString(),
+          formData: data
+        };
+
+        try {
+          localStorage.setItem("consulting_intake_backup", JSON.stringify(payload));
+        } catch (err) {
+          // Local storage can fail in private mode; submission still continues.
+        }
+      }
+
+      function openMailtoFallback(data) {
+        var target = "wesley@wmiddendorff.com";
+        var subject = encodeURIComponent("Strategy Call Request - " + data.fullName);
+        var body = encodeURIComponent(buildNotes(data));
+        var href = "mailto:" + target + "?subject=" + subject + "&body=" + body;
+        window.location.href = href;
+      }
+
+      async function submitToButtondown(data) {
+        var tokenMeta = document.querySelector('meta[name="buttondown-token"]');
+        var apiToken = (window.BUTTONDOWN_API_TOKEN || (tokenMeta ? tokenMeta.content : "") || "").trim();
+
+        var payload = {
+          email: data.email,
+          tags: ["strategy-call-request"],
+          notes: buildNotes(data),
+          metadata: {
+            full_name: data.fullName,
+            company_name: data.companyName,
+            company_size: data.companySize,
+            industry: data.industry,
+            biggest_challenge: data.biggestChallenge,
+            current_tools: data.currentTools,
+            preferred_meeting_time: data.preferredTime.join(", "),
+            how_found_us: data.howFound,
+            assessment_score: data.assessmentScore,
+            assessment_level: data.assessmentLevel,
+            source_page: "consulting-intake"
+          }
+        };
+
+        var headers = {
+          "Content-Type": "application/json"
+        };
+
+        if (apiToken) {
+          headers.Authorization = "Token " + apiToken;
+        }
+
+        var response = await fetch("https://api.buttondown.com/v1/subscribers", {
+          method: "POST",
+          headers: headers,
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          var text = await response.text();
+          throw new Error(text || "Buttondown submission failed");
+        }
+      }
+
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        var data = validateForm();
+        if (!data) {
+          showStatus("warn", "Please fix the highlighted fields and try again.");
+          return;
+        }
+
+        backupLocally(data);
+        submitBtn.disabled = true;
+        showStatus("info", "Submitting your request...");
+
+        try {
+          await submitToButtondown(data);
+          form.reset();
+          scoreField.value = data.assessmentScore === "Not provided" ? "" : data.assessmentScore;
+          levelField.value = data.assessmentLevel === "Not provided" ? "" : data.assessmentLevel;
+          showStatus("ok", "Thanks! Wesley will reach out within 24 hours to schedule your call.");
+        } catch (error) {
+          showStatus("warn", "Buttondown is unavailable right now. Opening your email app as fallback...");
+          openMailtoFallback(data);
+        } finally {
+          submitBtn.disabled = false;
+        }
+      });
+
+      readParams();
+
+      var revealEls = document.querySelectorAll(".reveal");
+      Array.prototype.forEach.call(revealEls, function (el, idx) {
+        window.setTimeout(function () {
+          el.classList.add("in");
+        }, 90 + idx * 85);
+      });
+    })();
+  </script>
+
+  <script async data-goatcounter="https://bridgette-enterprises.goatcounter.com/count" src="https://gc.zgo.at/count.js"></script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://wmiddendorff.github.io/#business",
+          "name": "Bridgette Enterprises",
+          "url": "https://wmiddendorff.github.io/",
+          "description": "AI implementation consulting and strategy services led by Wesley Middendorff.",
+          "areaServed": "US",
+          "sameAs": [
+            "https://wmiddendorff.github.io/",
+            "https://wmiddendorff.github.io/blog/"
+          ]
+        },
+        {
+          "@type": "Service",
+          "@id": "https://wmiddendorff.github.io/consulting/#service",
+          "name": "AI Strategy Session",
+          "provider": {
+            "@id": "https://wmiddendorff.github.io/#business"
+          },
+          "serviceType": "AI consulting",
+          "url": "https://wmiddendorff.github.io/consulting/",
+          "description": "Free 30-minute intake and strategy session for businesses evaluating AI adoption.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        }
+      ]
+    }
+  </script>
+</body>
+</html>
